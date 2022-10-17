@@ -1,0 +1,56 @@
+----------------------------------------
+npm list -g --depth 0
+----------------------------------------
+bilgisayarda kurulu olan global paketleri gösterir
+
+
+----------------------------------------
+sudo npm i -g live-server
+----------------------------------------
+live server indirir
+
+
+----------------------------------------
+live-server public
+----------------------------------------
+public altındaki index.htmli çalıştırır.
+
+
+----------------------------------------
+npm init --yes
+---------------------------------------
+package.json gelir.
+
+
+----------------------------------------
+npm install --save-dev @babel/cli@7.10.5 @babel/core@7.10.5
+npm install --save-dev @babel/preset-env@7.10.4
+npm install --save-dev @babel/preset-react@7.10.4
+npm install
+-----------------------------------------
+
+npx babel --help
+----------------------------------------
+
+
+----------------------------------------
+bir dosyayı dönüştürme işlemi
+npx babel src/app.js --out-file=public/scripts/app.js
+
+otomatik olarak bu dönüşümün yapılması için
+npx babel src/app.js --out-file=public/scripts/app.js --watch
+
+bunları daha kısa package.json'a yazabiliriz sürekli çağırmak yerine.
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "live-server public",
+    "babel": "npx babel src/app.js --out-file=public/scripts/app.js --watch"
+  },
+
+
+---------------------------------------------
+  terminale 
+npm run babel
+npm run start
+
+---------------------------------------------
