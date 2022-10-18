@@ -2,6 +2,8 @@
 
 var root = document.getElementById('root');
 
+//_________________________________________________________________________________________________
+
 var template = <div>
                     <h1 id="header">Hello World</h1>
                     <div>Lorem ipsum dolor sit amet.</div>
@@ -15,6 +17,7 @@ var template = <div>
 var name = "Samsung 510";
 var price = 5000;
 var description = "iyi bir telefon"
+//_________________________________________________________________________________________________
 
 var product =   {
                     // name : "Samsung 510",
@@ -46,5 +49,48 @@ var template2 = (
     </div>
 );
 
+//_________________________________________________________________________________________________
 
-ReactDOM.render(template2,root)
+var number = 0;
+
+var btnAddClassName = "btnGreen"
+var btnMinusClassName = "btnRed"
+
+function addOne() {
+    console.log('add one')
+}
+
+function minusOne() {
+    console.log('minus one')
+}
+
+var minusOneArrowFunc = () => {
+    console.log('minus one arrow')
+}
+
+var template3 = (
+    <div>
+        <h1>Number: {number}</h1>
+        <button id="btnPlusOne" className={btnAddClassName} onClick={addOne}>+1</button>
+        <button id="btnMinusOne" className={btnMinusClassName} 
+                onClick={() => {
+                    console.log('minus')
+                }}>-1
+                
+                
+        </button>
+    </div>
+)
+
+
+
+
+
+
+
+
+
+
+
+
+ReactDOM.render(template3,root)
