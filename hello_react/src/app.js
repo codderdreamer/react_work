@@ -57,10 +57,14 @@ var btnAddClassName = "btnGreen"
 var btnMinusClassName = "btnRed"
 
 function addOne() {
+    number++
+    renderApp();
     console.log('add one')
 }
 
 function minusOne() {
+    number--
+    renderApp();
     console.log('minus one')
 }
 
@@ -68,19 +72,35 @@ var minusOneArrowFunc = () => {
     console.log('minus one arrow')
 }
 
-var template3 = (
-    <div>
-        <h1>Number: {number}</h1>
-        <button id="btnPlusOne" className={btnAddClassName} onClick={addOne}>+1</button>
-        <button id="btnMinusOne" className={btnMinusClassName} 
-                onClick={() => {
-                    console.log('minus')
-                }}>-1
-                
-                
-        </button>
-    </div>
-)
+
+
+function renderApp() {
+    var template3 = (
+        <div>
+            <h1>Number: {number}</h1>
+            <button id="btnPlusOne" className={btnAddClassName} onClick={addOne}>+1</button>
+            <button id="btnMinusOne" className={btnMinusClassName} onClick={minusOne}>-1</button>
+        </div>
+    )
+    
+    ReactDOM.render(template3,root)
+}
+
+//_________________________________________________________________________________________________
+
+function tick() {
+    var element = (
+        <div>
+            <h2>time is: {new Date().toLocaleTimeString()}</h2>
+        </div>
+    )
+
+    ReactDOM.render(element,root)
+}
+
+setInterval(() => {
+    tick()
+}, 1000);
 
 
 
@@ -89,8 +109,3 @@ var template3 = (
 
 
 
-
-
-
-
-ReactDOM.render(template3,root)

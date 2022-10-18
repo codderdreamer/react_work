@@ -46,23 +46,37 @@ var number = 0;
 var btnAddClassName = "btnGreen";
 var btnMinusClassName = "btnRed";
 function addOne() {
+  number++;
+  renderApp();
   console.log('add one');
 }
 function minusOne() {
+  number--;
+  renderApp();
   console.log('minus one');
 }
 var minusOneArrowFunc = function minusOneArrowFunc() {
   console.log('minus one arrow');
 };
-var template3 = /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h1", null, "Number: ", number), /*#__PURE__*/React.createElement("button", {
-  id: "btnPlusOne",
-  className: btnAddClassName,
-  onClick: addOne
-}, "+1"), /*#__PURE__*/React.createElement("button", {
-  id: "btnMinusOne",
-  className: btnMinusClassName,
-  onClick: function onClick() {
-    console.log('minus');
-  }
-}, "-1"));
-ReactDOM.render(template3, root);
+function renderApp() {
+  var template3 = /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h1", null, "Number: ", number), /*#__PURE__*/React.createElement("button", {
+    id: "btnPlusOne",
+    className: btnAddClassName,
+    onClick: addOne
+  }, "+1"), /*#__PURE__*/React.createElement("button", {
+    id: "btnMinusOne",
+    className: btnMinusClassName,
+    onClick: minusOne
+  }, "-1"));
+  ReactDOM.render(template3, root);
+}
+
+//_________________________________________________________________________________________________
+
+function tick() {
+  var element = /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h2", null, "time is: ", new Date().toLocaleTimeString()));
+  ReactDOM.render(element, root);
+}
+setInterval(function () {
+  tick();
+}, 1000);
