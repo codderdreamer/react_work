@@ -106,7 +106,17 @@ function clearItems() {
   render();
 }
 function render() {
-  var template4 = /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h1", null, app.title), /*#__PURE__*/React.createElement("div", null, app.description), /*#__PURE__*/React.createElement("ul", null, /*#__PURE__*/React.createElement("li", null, "Lorem, ipsum."), /*#__PURE__*/React.createElement("li", null, "Lorem, ipsum."), /*#__PURE__*/React.createElement("li", null, "Lorem, ipsum.")), /*#__PURE__*/React.createElement("p", null, /*#__PURE__*/React.createElement("button", {
+  var numbers = [1, 2, 3, 4, 5];
+  var listItems = numbers.map(function (number) {
+    return /*#__PURE__*/React.createElement("li", {
+      key: number.toString()
+    }, number);
+  });
+  var template4 = /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h1", null, app.title), /*#__PURE__*/React.createElement("div", null, app.description), /*#__PURE__*/React.createElement("ul", null, app.items.map(function (number) {
+    return /*#__PURE__*/React.createElement("li", {
+      key: number.toString()
+    }, number);
+  })), /*#__PURE__*/React.createElement("p", null, /*#__PURE__*/React.createElement("button", {
     onClick: clearItems
   }, "Clear")), /*#__PURE__*/React.createElement("p", null, app.items.length), /*#__PURE__*/React.createElement("form", {
     action: "",

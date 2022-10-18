@@ -129,14 +129,24 @@ function clearItems() {
 }
 
 function render() {
+    var numbers = [1,2,3,4,5];
+    var listItems = numbers.map((number) =>
+        <li key={number.toString()}>{number}</li>
+    )
     var template4 = (
         <div>
             <h1>{app.title}</h1>
             <div>{app.description}</div>
             <ul>
-                <li>Lorem, ipsum.</li>
-                <li>Lorem, ipsum.</li>
-                <li>Lorem, ipsum.</li>
+                {
+                    app.items.map(
+                        (number) =>
+                        {
+                            return <li key={number.toString()}>{number}</li>
+                        }
+                    )
+                
+                }
             </ul>
             <p>
                 <button onClick={clearItems}>Clear</button>
