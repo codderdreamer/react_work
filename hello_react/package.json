@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "live-server public",
-    "babel": "npx babel src/arrow-functions.js --out-file=public/scripts/arrow-functions.js --watch"
+    "babel": "npx babel src/class-extends.js --out-file=public/scripts/class-extends.js --watch"
   },
   "keywords": [],
   "author": "",
